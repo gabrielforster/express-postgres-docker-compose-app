@@ -17,5 +17,4 @@ WORKDIR ./dist
 
 EXPOSE 4000
 
-RUN ls
 CMD node index.js

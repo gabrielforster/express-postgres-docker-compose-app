@@ -8,7 +8,7 @@ export async function getAllUsers(req: Request, res: Response){
 
     res.json(data)
   } catch (error) {
-    res.status(404).json({ message: "No users found" })
+    res.status(404).json({ error })
   }
 }
 
