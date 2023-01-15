@@ -8,7 +8,21 @@ const app = express()
 app.use(express.json())
 
 app.get("/", (req: Request, res: Response) => {
-  res.send("Hello World")
+  res.json({
+    routes: {
+      "/users": {
+        "/": {
+          GET: "Get all users",
+          POST: "Create a new user"
+        },
+        "/:id": {
+          GET: "Get a user by id",
+          PATCH: "Update a user by id",
+          DELETE: "Delete a user by id"    
+        }
+      }
+    }
+  })
 })
 
 app.use("/users", UserRoute)
