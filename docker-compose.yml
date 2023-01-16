@@ -10,10 +10,9 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_DB=express-postgres-docker-compose
     volumes:
-      - pgdata:/postgres/data
+      - data:/var/lib/postgresql/data
     ports:
       - 5432:5432
 
 volumes:
-  pgdata:
-    driver: local
+  data:
